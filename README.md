@@ -27,7 +27,12 @@
 
 # Week-1 Introduction to OS
 [Top](#TOP)
-## 
+## 2025-01-15
+  ### I/O Structure
+  - When I/O starts, control only returns to the user after it has finished.
+    - Wait instruction idles CPU till next interrupt
+  - **System Call** - Requests to the OS to allow user to wait for I/O completion.
+  - **Device-Status Table** - Contains entry for each I/O device indicating it's type, address, and state.
 ## 2025-01-13
   - What is an **operating system**: A program that acts as an intermediary between a user of a computer and the computer hardware
   - OS is a **resource allocator**
