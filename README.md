@@ -27,6 +27,9 @@
 
 # Week-1 Introduction to OS
 [Top](#TOP)
+## 2025-01-17
+  ### Getting into the Chinook HPC Cluster
+  - Username: sowens23@chinook04.alaska.edu 
 ## 2025-01-15
   ### I/O Structure
   - When I/O starts, control only returns to the user after it has finished.
