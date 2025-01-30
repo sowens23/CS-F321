@@ -22,6 +22,13 @@
   | --- | --- | --- |
   | [Week-1](#Week-1) | [HW00](https://github.com/sowens23/CS-F301/tree/main/homework) | |
 
+# Week-3
+[Top](#TOP)
+## 2025-01-29
+  - exit() will request OS to delete program
+  - wait() will relay status of child to parent
+  - abort() will terminate execution of child process
+
 # Week-1 Introduction to OS
 [Top](#TOP)
 ## 2025-01-17
