@@ -13,10 +13,7 @@
   - [GitHubPortal](https://github.com/sowens23/Newbie-Gains/blob/main/README.md)
   - [CS-F321 Class Homepage](https://canvas.alaska.edu/courses/23575/modules)
 
-### Assembly/C# References
-  - [x86 CheatSheet](https://docs.google.com/document/d/1hwABu-SL6u2cdhVkjOCUU6T0UyALujep1NfwYfQzWSo/edit)
-  - [ARM CheatSheet](https://docs.google.com/document/d/1ozon1FnGTX7LZFA1JKBaXTrAZxlJNj0jMzrKgaUd_zA/edit#heading=h.8lf08sx6cr75)
-  - [Assembly CheatSheet](https://docs.google.com/document/d/1hwABu-SL6u2cdhVkjOCUU6T0UyALujep1NfwYfQzWSo/edit)
+### References
   - [printf reference](https://cplusplus.com/reference/cstdio/printf/)
   - [OpCodes](https://www.sandile.org/x86/)
 
