@@ -8,6 +8,13 @@
   }
   ```
 
+### Objectives and Outcomes
+ - The software stack in a modern computer: thread, process, container, kernel, hypervisor, and network.
+ - Enforcing access control and securing communication between these layers and designing services to use them effectively.
+ - Explain how machine security policy is enforced by the hardware.
+ - Architect a high-performance network service.
+ - Predict code timing and synchronization issues.
+
 ### Class Repositories
   - [sowens23-GitHub](https://github.com/sowens23)
   - [GitHubPortal](https://github.com/sowens23/Newbie-Gains/blob/main/README.md)
@@ -21,6 +28,27 @@
   | Weekly Notes | Assignments | Other Notes |
   | --- | --- | --- |
   | [Week-1](#Week-1) | [HW00](https://github.com/sowens23/CS-F301/tree/main/homework) | |
+
+# Week-4
+[Top](#TOP)
+## 2025-02-03
+  - From a Server Architecture perspective, the server handles client requests ad creates threads to handle services.
+  - **Parallelism** is when multiple tasks *literally* run at the same time on different CPU cores, or machines. It's simultaneous execution of code.
+  - **Concurrency** is when multiple tasks can *start, run and complete* in overlapping time periods. This is multiple threads of execution or processes logically progressing at once, this an happen even on a single CPU core.
+  - Types of Parallelism
+    - **Data parallelism** - Distributes subsets of the same data across multiple cores, same operation on each.
+    - **Task parallelism** - Distributing threads across cores, each thread performing unique operations.
+  - Consider a CPU with 8 cores, where each core has 8 threads.
+  **Amdahl's Law** identifies performance gains from adding additional cores to an application that has both serial and parallel components.
+    - **S(n)** is serial portion
+    - **n** is parallel processing cores
+    - **p** is the fraction of the task that can be parallelized (0-1)
+    $$
+    S(n) = \frac{1}{(1 - p) + \frac{p}{n}}
+    $$
+    - This demonstrates that if an application in 75% parallel / 25% serial and it goes from 1, to 2 cores, then we should see a resultant speedup of 1.6 times. As N approaches infinity, speedup approaches 1/S.
+  - To compile multithread: *g++ demoThread.c -lpthread -lrt*
+
 
 # Week-3
 [Top](#TOP)
