@@ -8,7 +8,6 @@
 # Usage: ./countline.sh {optional: path to file or directory}
 
 # Initialize total line count
-echo "-- Errors --"
 total_lines=0
 
 # Check if an error file is specified; create it if necessary
@@ -24,7 +23,7 @@ count_lines() {
     lines=$(wc -l < "$file" 2>> "$error_file") || {
       echo "Error reading file: $file" >> "$error_file"
       echo 0
-      return
+      returnl
     }
     echo "$lines"
   else
@@ -39,7 +38,9 @@ if [[ $# -eq 0 ]]; then
   for file in ./*; do
     if [[ -f $file ]]; then
       lines=$(count_lines "$file")
-      total_lines=$((total_lines + lines))
+      if (( lines > 0 )); then
+        total_lines=$((total_lines + lines + 1))
+      fi
     fi
   done
 else
@@ -49,12 +50,16 @@ else
       # If path is a directory, recurse over all files inside
       while IFS= read -r -d '' file; do
         lines=$(count_lines "$file")
-        total_lines=$((total_lines + lines))
+        if (( lines > 0 )); then
+          total_lines=$((total_lines + lines + 1))
+        fi
       done < <(find "$path" -type f -print0)
     elif [[ -f $path ]]; then
       # If the path is a file, count its lines
       lines=$(count_lines "$path")
-      total_lines=$((total_lines + lines))
+      if (( lines > 0 )); then
+        total_lines=$((total_lines + lines + 1))
+      fi
     else
       echo "Warning: '$path' is not a valid file or directory." >> "$error_file"
     fi
