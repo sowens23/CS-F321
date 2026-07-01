@@ -24,78 +24,65 @@
   - [printf reference](https://cplusplus.com/reference/cstdio/printf/)
   - [OpCodes](https://www.sandile.org/x86/)
 
-# Class Notes and Assignments
-  | Weekly Notes | Assignments | Other Notes |
+# Class Assignments and Labs
+  | Assignments | Labs | Other Notes |
   | --- | --- | --- |
-  | [Week-1](#Week-1) | [HW00](https://github.com/sowens23/CS-F301/tree/main/homework) | |
+  | [HW01](https://github.com/sowens23/CS-F321/tree/main/homework/lab01) | [Lab01](https://github.com/sowens23/CS-F321/tree/main/labs/lab1_shell) | |
+  | [HW02](https://github.com/sowens23/CS-F321/tree/main/homework/lab02) | [Lab02](https://github.com/sowens23/CS-F321/tree/main/labs/lab2_process) | |
+  | [HW03](https://github.com/sowens23/CS-F321/tree/main/homework/lab03) | [Lab03](https://github.com/sowens23/CS-F321/tree/main/labs/lab3) | [Other Lab03](https://github.com/sowens23/CS-F321/tree/main/labs/lab3_InterProcessCommunication) |
+  | | [Lab04](https://github.com/sowens23/CS-F321/tree/main/labs/lab4_ThreadAndCriticalSection) | [Lab04 Deliverable](https://github.com/sowens23/CS-F321/blob/main/labs/lab04.sh) |
+  | [Final](https://github.com/sowens23/CS-F321/tree/main/homework/final) | [Lab05](https://github.com/sowens23/CS-F321/tree/main/labs/lab5_MemoryManagement) | |
 
-# Week-4
-[Top](#TOP)
-## 2025-02-03
-  - From a Server Architecture perspective, the server handles client requests ad creates threads to handle services.
-  - **Parallelism** is when multiple tasks *literally* run at the same time on different CPU cores, or machines. It's simultaneous execution of code.
-  - **Concurrency** is when multiple tasks can *start, run and complete* in overlapping time periods. This is multiple threads of execution or processes logically progressing at once, this an happen even on a single CPU core.
-  - Types of Parallelism
-    - **Data parallelism** - Distributes subsets of the same data across multiple cores, same operation on each.
-    - **Task parallelism** - Distributing threads across cores, each thread performing unique operations.
-  - Consider a CPU with 8 cores, where each core has 8 threads.
-  **Amdahl's Law** identifies performance gains from adding additional cores to an application that has both serial and parallel components.
-    - **S(n)** is serial portion
-    - **n** is parallel processing cores
-    - **p** is the fraction of the task that can be parallelized (0-1)
-    $$
-    S(n) = \frac{1}{(1 - p) + \frac{p}{n}}
-    $$
-    - This demonstrates that if an application in 75% parallel / 25% serial and it goes from 1, to 2 cores, then we should see a resultant speedup of 1.6 times. As N approaches infinity, speedup approaches 1/S.
-  - To compile multithread: *g++ demoThread.c -lpthread -lrt*
-
-
-# Week-4
-[Top](#TOP)
-
-
-# Week-3
-[Top](#TOP)
-## 2025-01-29
-  - exit() will request OS to delete program
-  - wait() will relay status of child to parent
-  - abort() will terminate execution of child process
-
-# Week-1 Introduction to OS
-[Top](#TOP)
-## 2025-01-17
-  ### Getting into the Chinook HPC Cluster
-  - Username: sowens23@chinook04.alaska.edu 
-## 2025-01-15
-  ### I/O Structure
-  - When I/O starts, control only returns to the user after it has finished.
-    - Wait instruction idles CPU till next interrupt
-  - **System Call** - Requests to the OS to allow user to wait for I/O completion.
-  - **Device-Status Table** - Contains entry for each I/O device indicating it's type, address, and state.
-## 2025-01-13
-  - What is an **operating system**: A program that acts as an intermediary between a user of a computer and the computer hardware
-  - OS is a **resource allocator**
-    - Manages all resources
-    - Decides between conflicting requests for efficient and fair resource use
-  - OS is a **control program**
-    - Controls execution of programs to prevent errors and improper use of computer
-  - It's goals are:
-    1. To execute user programs.
-    2. Make computer system convenient to use.
-    3. Use computer hardware in efficient manner.
-  - **Computer systems** can be divided into four categories
-    1. Hardware
-    2. Operating System
-    3. Application programs
-    4. Users
+# Class Notes
+- From a Server Architecture perspective, the server handles client requests ad creates threads to handle services.
+- **Parallelism** is when multiple tasks *literally* run at the same time on different CPU cores, or machines. It's simultaneous execution of code.
+- **Concurrency** is when multiple tasks can *start, run and complete* in overlapping time periods. This is multiple threads of execution or processes logically progressing at once, this an happen even on a single CPU core.
+- Types of Parallelism
+  - **Data parallelism** - Distributes subsets of the same data across multiple cores, same operation on each.
+  - **Task parallelism** - Distributing threads across cores, each thread performing unique operations.
+- Consider a CPU with 8 cores, where each core has 8 threads.
+**Amdahl's Law** identifies performance gains from adding additional cores to an application that has both serial and parallel components.
+  - **S(n)** is serial portion
+  - **n** is parallel processing cores
+  - **p** is the fraction of the task that can be parallelized (0-1)
+  $$
+  S(n) = \frac{1}{(1 - p) + \frac{p}{n}}
+  $$
+  - This demonstrates that if an application in 75% parallel / 25% serial and it goes from 1, to 2 cores, then we should see a resultant speedup of 1.6 times. As N approaches infinity, speedup approaches 1/S.
+- To compile multithread: *g++ demoThread.c -lpthread -lrt*
+- exit() will request OS to delete program
+- wait() will relay status of child to parent
+- abort() will terminate execution of child process
+### Getting into the Chinook HPC Cluster
+- Username: sowens23@chinook04.alaska.edu 
+### I/O Structure
+- When I/O starts, control only returns to the user after it has finished.
+  - Wait instruction idles CPU till next interrupt
+- **System Call** - Requests to the OS to allow user to wait for I/O completion.
+- **Device-Status Table** - Contains entry for each I/O device indicating it's type, address, and state.
+- What is an **operating system**: A program that acts as an intermediary between a user of a computer and the computer hardware
+- OS is a **resource allocator**
+  - Manages all resources
+  - Decides between conflicting requests for efficient and fair resource use
+- OS is a **control program**
+  - Controls execution of programs to prevent errors and improper use of computer
+- It's goals are:
+  1. To execute user programs.
+  2. Make computer system convenient to use.
+  3. Use computer hardware in efficient manner.
+- **Computer systems** can be divided into four categories
+  1. Hardware
+  2. Operating System
+  3. Application programs
+  4. Users
 - **Bootstrap program** is loaded at power-up or reboot.
-  - Typically stoed in ROM or EPROM, known as **firmware**
-  - Initializes all aspects of system
-  - Loads OS kernel and starts execution.
+- Typically stoed in ROM or EPROM, known as **firmware**
+- Initializes all aspects of system
+- Loads OS kernel and starts execution.
 - **Interrupt** transfers control to the interrupt service routine, generally through the **interrupt vector**, which contains addresses of service routine.
-  - Interrupt archnitecture must save addresses of interrupted instruction
-  - A **trap** or **exception** is a software-generated interrupt caused either by an error or a user request.
-  - An operating system is **interrupt drive**
+- Interrupt archnitecture must save addresses of interrupted instruction
+- A **trap** or **exception** is a software-generated interrupt caused either by an error or a user request.
+- An operating system is **interrupt drive**
 - Interrupt Handling:
   1. The operating sys preserves state of CPU in registers and with the program counter.
   2. OS determines which type of interrupt has occurred (**polling** or **Vectored**)
